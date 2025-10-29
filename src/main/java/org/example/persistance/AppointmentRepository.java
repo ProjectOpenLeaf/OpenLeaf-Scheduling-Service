@@ -17,4 +17,8 @@ public interface AppointmentRepository extends JpaRepository<AppointmentEntity, 
     List<AppointmentEntity> findByPatientKeycloakId(String patientKeycloakId);
 
     boolean existsByTherapistKeycloakIdAndStartTimeBetween(String therapistKeycloakId, LocalDateTime start, LocalDateTime end);
+
+    int deleteByPatientKeycloakId(String patientKeycloakId);
+
+    int deleteByTherapistKeycloakId(String therapistKeycloakId);
 }

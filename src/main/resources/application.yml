@@ -20,6 +20,17 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10000
+    requested-heartbeat: 30
+    listener:
+      simple:
+        default-requeue-rejected: false
+
 logging:
   level:
     org.example: DEBUG
