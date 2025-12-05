@@ -6,10 +6,10 @@ spring:
     name: appointment-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/openleaf_appointments
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/openleaf_appointments}
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:postgres}
 
   jpa:
     hibernate:
@@ -21,10 +21,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    host: ${SPRING_RABBITMQ_HOST:localhost}
+    port: ${SPRING_RABBITMQ_PORT:5672}
+    username: ${SPRING_RABBITMQ_USERNAME:guest}
+    password: ${SPRING_RABBITMQ_PASSWORD:guest}
     connection-timeout: 10000
     requested-heartbeat: 30
     listener:
