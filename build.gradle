@@ -38,6 +38,8 @@ jacocoTestReport {
                     '**/dto/**',
                     '**/entity/**',
                     '**/exception/**',
+                    '**/controller/**',
+                    '**/persistance/**',
                     '**/*Application.class'
             ])
         }))
@@ -68,8 +70,8 @@ sonar {
 
         property 'sonar.coverage.jacoco.xmlReportPaths', "$buildDir/reports/jacoco/test/jacocoTestReport.xml"
 
-        property 'sonar.exclusions', '**/config/**, **/dto/**, **/entity/**, **/exception/**, **/*Application.java'
-        property 'sonar.coverage.exclusions', '**/config/**, **/dto/**, **/entity/**, **/exception/**, **/*Application.java'
+        property 'sonar.exclusions', '**/config/**, **/dto/**, **/entity/**, **/controller/**, **/persistance/**,  **/exception/**, **/*Application.java'
+        property 'sonar.coverage.exclusions', '**/config/**, **/dto/**, **/entity/**, **/exception/**,  **/controller/**, **/persistance/**,**/*Application.java'
     }
 }
 
